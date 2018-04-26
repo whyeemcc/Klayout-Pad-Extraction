@@ -1,0 +1,63 @@
+{
+"Mos":
+        {
+        "Subdie_Index"   : "$Auto_Generate",
+        "Device_Name"    : "$User_Defined_in_Col_A",
+        " "              : "{}",
+        "Model_Name"     : "bsim4",
+        "Device_Type"    : "$User_Defined_in_Col_B",
+        "Setup_File_Name": "$User_Defined_in_Col_C",
+        "D_node"         : "$int(User_Defined_in_Col_D)",
+        "G_node"         : "$int(User_Defined_in_Col_E)",
+        "S_node"         : "$int(User_Defined_in_Col_F)",
+        "B_node"         : "$int(User_Defined_in_Col_G)",
+        "W(um)"          : "$round(User_Defined_in_Col_H)",
+        "L(um)"          : "$round(User_Defined_in_Col_I)",
+        "T(c)" 	         : "N/A",
+        "As(m2)"         : "N/A",
+        "Ad(m2)"         : "N/A",
+        "Ps(m)"          : "N/A",
+        "Pd(m)" 	     : "N/A",
+        "Nrs()" 	     : "N/A",
+        "Nrd()" 	     : "N/A",
+        "Sa(m)" 	     : "N/A",
+        "Sb(m)" 	     : "N/A",
+        "Sd(m)" 	     : "N/A",
+        "Rdc()" 	     : "N/A",
+        "Rsc()" 	     : "N/A",
+        "m()" 	         : "N/A",
+        "nf()" 	         : "N/A",
+        "min()" 	     : "N/A",
+        "trnqsmod()"     : "N/A"
+        },
+"Dio":
+       {
+       },
+"Res":
+       {
+        "Subdie_Index"   : "$Auto_Generate",
+        "Device_Name"    : "$User_Defined_in_Col_A",
+        " "              : "{}",
+        "Model_Name"     : "res",
+        "Device_Type"    : "r",
+        "Setup_File_Name": "$User_Defined_in_Col_B",
+        "R_node"         : "$int(User_Defined_in_Col_D)",
+        "S_node"         : "$int(User_Defined_in_Col_E)",
+        "V1_node"        : "$int(User_Defined_in_Col_F)",
+        "V2_node"        : "$int(User_Defined_in_Col_G)",
+        "B_node"         : "$int(User_Defined_in_Col_G)",
+        "W(um)"          : "$round(User_Defined_in_Col_H)",
+        "L(um)"          : "$round(User_Defined_in_Col_I)",
+        "M()"            : "NA",
+        "T(c)" 	         : "N/A",
+        "SCALE()"        : "N/A",
+        "R(ohm)"         : "N/A",
+        "C(f)"           : "N/A",
+        "AC(ohm)" 	     : "N/A",
+        "TC1(1/deg)"     : "N/A",
+        "TC2(1/deg^2)"   : "N/A",
+        "TC1c(1/deg)"    : "N/A",
+        "TC2c(1/deg^2)"  : "N/A",
+        "region()" 	     : "N/A"      
+       }
+}

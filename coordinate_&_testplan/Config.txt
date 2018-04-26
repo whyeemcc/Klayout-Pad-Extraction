@@ -1,0 +1,7 @@
+# 请在中括号内输入想要抽取的 module 区域的父 cell 名称，用英文引号引住。同时输入多个时，请以英文逗号间隔开：
+search_cells = ['CV_ELVT','CV_LVT','CV_HVT']
+
+
+# 请确认 pad 的对应 layer_number 和 data_type (默认为 ALPA):
+pad_layer_num = 83
+pad_data_type = 0
