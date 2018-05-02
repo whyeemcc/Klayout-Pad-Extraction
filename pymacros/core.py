@@ -46,9 +46,11 @@ class Core:
             if shape.is_box():
                 # the bbox object should be transformed into pad-cell's origin 
                 box = shape.bbox().transformed(iter.trans())
-                p1 = box.p1.x*self.dbu
-                p2 = box.p1.y*self.dbu
-                pad_list.append((p1,p2))
+                p1_x = box.p1.x*self.dbu
+                p1_y = box.p1.y*self.dbu
+                width = box.width()*self.dbu
+                height = box.height()*self.dbu
+                pad_list.append((p1_x,p1_y,width,height))
             iter.next()
         return pad_list
         
@@ -71,7 +73,7 @@ class Core:
     def get_coordinates(self):
         """
         extract all the pad's coordinate from given cells
-        dic = {'module_name_1':[(x1,y1),(x2,y2)...],...}
+        dic = {'module_name_1':[(x1,y1,width,height),(x2,y2,width,height)...],...}
         """
         dic = {}
         for search_cell in self.search_cells:
@@ -91,6 +93,6 @@ class Core:
                 x1 = x0 + vector[0]
                 y1 = y0 + vector[1]
                 vectors = self.pad_vectors(module)
-                vectors = [(round(x1+X),round(y1+Y)) for (X,Y) in vectors]
+                vectors = [(round(x1+X),round(y1+Y),round(W),round(H)) for (X,Y,W,H) in vectors]
                 dic[module] = vectors
         return dic

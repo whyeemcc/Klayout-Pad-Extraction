@@ -50,14 +50,16 @@ $User: tdeng
 
         shrink = self.data['Shrink']
         reference = eval(self.data['Reference'])
+        center_r  = (reference[0]+1/2*reference[2],reference[1]+1/2*reference[3])
 
         coordinate_str_list = []
         for mdu in modules:
             coordinate = eval(self.data[mdu]["1"])
-            # y axis should be inverse due to the wat machine
-            x = round((coordinate[0]-reference[0])*shrink)
-            y = round((coordinate[1]-reference[1])*shrink*-1)
-            coordinate_str_list.append(str(x)+','+str(y))
+            center = (coordinate[0]+1/2*coordinate[2],coordinate[1]+1/2*coordinate[3])
+            # y axis should be inverse due to the wat machine (Except MPPT machine)
+            delta_x = round((center[0]-center_r[0])*shrink)
+            delta_y = round((center[1]-center_r[1])*shrink*-1)
+            coordinate_str_list.append(str(delta_x)+','+str(delta_y))
 
         mdu_len = [len(x) for x in modules]
         cor_len = [len(x) for x in coordinate_str_list]
@@ -67,7 +69,7 @@ $User: tdeng
         self.frame(max_mdu_len,max_cor_len)
         self.fnew.write(' BODY\n')
         for mdu,co in zip(modules,coordinate_str_list):
-            self.fnew.write('      `%s` '%mdu + co + '\n')
+            self.fnew.write('      '+('`%s`'%mdu).ljust(max_mdu_len+2)+' '+ co.ljust(max_cor_len) + '\n')
         self.frame(max_mdu_len,max_cor_len)
 
         self.fnew.close()

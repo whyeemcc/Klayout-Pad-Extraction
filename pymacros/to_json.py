@@ -22,7 +22,7 @@ class To_json:
         """
         self.write('{')
         self.write('"Shrink" : 1,\n')
-        self.write('"Reference" : "(0,0)",\n')
+        self.write('"Reference" : "(0,0,0,0)",\n')
         for i,module in enumerate(self.module_list):
             pad_cor = self.dic[module]
             self.write('"%s" :' %module.upper())

@@ -79,7 +79,7 @@ class Main():
             non_repeat = len(set(dies_))
             
         self.fnew1.write('List of group mesured\n')
-        self.fnew1.write('*die group_index (non-repeat dies : %s)\n'%non_repeat)
+        self.fnew1.write('*die group_index\n')
         for i,die in enumerate(dies_):
             self.fnew1.write(die + ' ' + str(i+1) + '\n')
         self.fnew1.close()
